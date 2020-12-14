@@ -40,9 +40,11 @@
 	const startButton = document.getElementById( 'startButton' );
 	startButton.addEventListener( 'click', init );
 		
-	window.addEventListener('resize', onResize, false);
+	
 		
 	function init(){
+			window.addEventListener('resize', onResize, false);
+		
 			const overlay = document.getElementById( 'overlay' );
 			overlay.remove();
 		
