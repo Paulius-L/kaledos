@@ -32,7 +32,7 @@
 		<script src="js/OBJLoader.js"></script>
 		
 		<div id="overlay" class="center">
-			<button id="startButton">START</button>
+			<button id="startButton">KALĖDOS</button>
 		</div>
 		
 	<script type="module">
@@ -58,6 +58,7 @@
 			var controls = new THREE.OrbitControls( camera, renderer.domElement );
 			//controls.update() must be called after any manual changes to the camera's transform
 			camera.position.set( 0, 70, 100 );
+			controls.autoRotate = true;
 			controls.update();
 			
 			//audio
@@ -138,8 +139,8 @@
 				//cube.rotation.y += 0.01;
 				controls.update();
 				
-				camera.position.z += 0.01;
-				camera.position.x += 0.01;
+				//camera.position.z += 0.01;
+				//camera.position.x += 0.01;
 
 				renderer.render( scene, camera );
 			};
