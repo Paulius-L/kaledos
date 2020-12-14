@@ -36,11 +36,15 @@
 			overlay.remove();
 		
 			const scene = new THREE.Scene();
+			scene.fog = new THREE.FogExp2( 0xDD709B,0.007); //new
 			const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
-			const renderer = new THREE.WebGLRenderer();
+			//const renderer = new THREE.WebGLRenderer();
+			const renderer = new THREE.WebGLRenderer({alpha : true, antialias : true}); //new
 			renderer.setSize( window.innerWidth, window.innerHeight );
+			renderer.setClearColor(0x000000, 0);//new
 			document.body.appendChild( renderer.domElement );
+			renderer.shadowMap.enabled = true;//new
 			
 			
 			var controls = new THREE.OrbitControls( camera, renderer.domElement );
@@ -64,7 +68,7 @@
 			
 			
 			//sky
-			var skyGeo = new THREE.SphereGeometry(100000, 25, 25); 
+			/*var skyGeo = new THREE.SphereGeometry(100000, 25, 25); 
 			var loaderSky  = new THREE.TextureLoader(),
 			texture = loaderSky.load( "../obj_2/space.jpg" );
 			
@@ -83,6 +87,7 @@
 			plane.rotateX( - Math.PI / 2);
 
 			scene.add(plane);
+			*/
 			
 			var model;						
 			const loader = new THREE.GLTFLoader();			
