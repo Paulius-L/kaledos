@@ -26,6 +26,21 @@
 			camera.position.set( 0, 70, 100 );
 			controls.update();
 			
+			//audio
+			const listener = new THREE.AudioListener();
+			camera.add( listener );
+			
+			const sound = new THREE.Audio( listener );
+			
+			const audioLoader = new THREE.AudioLoader();
+			audioLoader.load( 'obj_2/music.mp3', function( buffer ) {
+				sound.setBuffer( buffer );
+				sound.setLoop( true );
+				sound.setVolume( 0.5 );
+				sound.play();
+			});
+			
+			
 			//sky
 			var skyGeo = new THREE.SphereGeometry(100000, 25, 25); 
 			var loaderSky  = new THREE.TextureLoader(),
