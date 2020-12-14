@@ -12,7 +12,20 @@
 		<script src="js/GLTFLoader.js"></script>
 		<script src="js/MTLLoader.js"></script>
 		<script src="js/OBJLoader.js"></script>
-		<script>
+		
+		<div id="overlay">
+			<button id="startButton">Play</button>
+		</div>
+		
+	<script type="module">
+		
+	const startButton = document.getElementById( 'startButton' );
+	startButton.addEventListener( 'click', init );
+		
+	function init(){
+			const overlay = document.getElementById( 'overlay' );
+			overlay.remove();
+		
 			const scene = new THREE.Scene();
 			const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
@@ -95,6 +108,7 @@
 			};
 
 			animate();
+	}
 		</script>
 	</body>
 </html>
