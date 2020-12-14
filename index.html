@@ -40,6 +40,8 @@
 	const startButton = document.getElementById( 'startButton' );
 	startButton.addEventListener( 'click', init );
 		
+	window.addEventListener('resize', onResize, false);
+		
 	function init(){
 			const overlay = document.getElementById( 'overlay' );
 			overlay.remove();
@@ -130,7 +132,8 @@
 			camera.position.y = 50;
 			camera.position.x = -50;
 			camera.lookAt(0, 0, 0);
-	
+		
+			
 
 			const animate = function () {
 				requestAnimationFrame( animate );
@@ -147,6 +150,12 @@
 
 			animate();
 	}
+	function onResize() {
+		  camera.aspect = window.innerWidth / window.innerHeight;
+		  camera.updateProjectionMatrix();
+		  renderer.setSize(window.innerWidth, window.innerHeight);
+	}
+
 		</script>
 	</body>
 </html>
