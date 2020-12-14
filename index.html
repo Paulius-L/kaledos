@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>My first three.js app</title>
+		<title>CFO Kalėdos</title>
 		<style>
 			body { margin: 0; }
 		</style>
 	</head>
 	<body>
-		<script src="js/three.js"></script>
-		<script src="js/OrbitControls.js"></script>
-		<script src="js/GLTFLoader.js"></script>
-		<script src="js/MTLLoader.js"></script>
-		<script src="js/OBJLoader.js"></script>
+		<script src="../js/three.js"></script>
+		<script src="../js/OrbitControls.js"></script>
+		<script src="../js/GLTFLoader.js"></script>
+		<script src="../js/MTLLoader.js"></script>
+		<script src="../js/OBJLoader.js"></script>
 		
 		<script>
 			const scene = new THREE.Scene();
@@ -30,7 +30,7 @@
 			//sky
 			var skyGeo = new THREE.SphereGeometry(100000, 25, 25); 
 			var loaderSky  = new THREE.TextureLoader(),
-			texture = loaderSky.load( "obj/space.jpg" );
+			texture = loaderSky.load( "../obj_2/space.jpg" );
 			
 			var material = new THREE.MeshPhongMaterial({ 
 			map: texture,
@@ -51,8 +51,8 @@
 			var model;
 			
 			const loader = new THREE.GLTFLoader();
-			loader.load( 'obj_2/tree_v7.gltf', function ( gltf ) {
-			//loader.load( 'test_faces/face_simple2.gltf', function ( gltf ) {
+			loader.load( 'https://github.com/Paulius-L/kaledos/blob/main/obj_2/tree_v7.gltf', function ( gltf ) {
+			//loader.load( 'obj_2/tree_v7.gltf', function ( gltf ) {
 				model = gltf.scene;
 				model.position.y=3.5;
 				scene.add( model );
