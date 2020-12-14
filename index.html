@@ -4,6 +4,15 @@
 		<title>CFO Kalėdos</title>
 		<style>
 			body { margin: 0; }
+			
+			.center {
+			  margin: 0;
+			  position: absolute;
+			  top: 50%;
+			  left: 50%;
+			  -ms-transform: translate(-50%, -50%);
+			  transform: translate(-50%, -50%);
+			}
 		</style>
 	</head>
 	<body>
@@ -13,8 +22,8 @@
 		<script src="js/MTLLoader.js"></script>
 		<script src="js/OBJLoader.js"></script>
 		
-		<div id="overlay">
-			<button id="startButton">Play</button>
+		<div id="overlay" class="center">
+			<button id="startButton">START</button>
 		</div>
 		
 	<script type="module">
